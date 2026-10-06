@@ -32,6 +32,7 @@ public class SortingChecks {
             check(SortingPractice::selectionSort, input);
             check(SortingPractice::insertionSort, input);
             check(SortingPractice::mergeSort, input);
+            check(SortingPractice::quickSort, input);
         }
         System.out.println("Passed " + checks + " sorting checks.");
     }

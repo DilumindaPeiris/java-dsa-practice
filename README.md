@@ -2,8 +2,8 @@
 
 A growing collection of data structures and algorithms implemented in Java.
 The project includes three sorting algorithms checked against Java's built-in
-sort, plus merge sort and linear search and iterative and recursive binary
-search with executable checks.
+sort, plus merge sort, quicksort, and linear search and iterative and recursive
+binary search with executable checks.
 
 ## Implemented algorithms
 
@@ -13,12 +13,14 @@ search with executable checks.
 | Selection sort | O(n²) | O(n²) | O(n²) | O(1) |
 | Insertion sort | O(n) | O(n²) | O(n²) | O(1) |
 | Merge sort | O(n log n) | O(n log n) | O(n log n) | O(n) |
+| Quicksort | O(n log n) | O(n log n) | O(n²) | O(log n) stack |
 | Linear search | O(1) | O(n) | O(n) | O(1) |
 | Binary search | O(1) | O(log n) | O(log n) | O(1) |
 | Recursive binary search | O(1) | O(log n) | O(log n) | O(log n) |
 
 The sorting implementations sort an integer array in place, in ascending
-order. Merge sort uses additional O(n) space. Linear search accepts any
+order. Merge sort uses additional O(n) space. Quicksort sorts in place and
+recurses on the smaller partition to keep its stack use O(log n). Linear search accepts any
 non-null integer array and returns the first
 matching index, or -1 if the target is absent. Binary search requires a
 non-null array already sorted in ascending order and returns a matching index,
@@ -48,6 +50,7 @@ Bubble:    [11, 12, 22, 25, 64]
 Selection: [11, 12, 22, 25, 64]
 Insertion: [11, 12, 22, 25, 64]
 Merge:     [11, 12, 22, 25, 64]
+Quick:     [11, 12, 22, 25, 64]
 ```
 
 Sorting checks cover empty arrays, one element, sorted and reversed input,
