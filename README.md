@@ -31,6 +31,13 @@ clones the original array so each algorithm receives the same input.
 Pair-sum search requires a non-null array sorted in ascending order and checks
 whether two distinct elements sum to the target.
 
+## Implemented data structures
+
+`IntArrayStack` is a fixed-capacity integer stack. Push, pop, peek, size, and
+empty checks take O(1) time; backing storage uses O(capacity) space. A
+non-positive capacity is rejected, and pushing to a full stack or popping or
+peeking at an empty stack throws `IllegalStateException`.
+
 ## Run locally
 
 Install JDK 17 or newer (a JRE alone does not include the compiler).
@@ -44,6 +51,7 @@ java -cp out LinearSearchChecks
 java -cp out BinarySearchChecks
 java -cp out RecursiveBinarySearchChecks
 java -cp out PairSumChecks
+java -cp out IntArrayStackChecks
 ```
 
 Expected demo output:
@@ -63,7 +71,7 @@ Binary search checks cover empty and one-element arrays, boundaries, missing
 values, duplicates, negative numbers, and integer extremes. Linear search
 checks cover empty and one-element arrays, unsorted input, boundaries, missing
 values, duplicates, and integer extremes. GitHub Actions compiles and runs all
-five check suites on pushes and pull requests.
+six check suites on pushes and pull requests.
 
 ## Learning exercises
 
@@ -71,7 +79,7 @@ five check suites on pushes and pull requests.
 - Explain why bubble sort can stop when a pass makes no swaps.
 - Count comparisons and swaps, then compare the algorithms.
 - Compare binary and linear search on arrays that are sorted and unsorted.
-- Implement a stack and queue after completing the sorting exercises.
+- Implement an array-backed queue after completing the stack exercise.
 
 Commit completed improvements with descriptive messages. Record only work
 actually completed; the exercises above are future tasks.
