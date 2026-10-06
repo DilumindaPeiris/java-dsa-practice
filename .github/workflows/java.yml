@@ -14,3 +14,4 @@ jobs:
       - run: javac -d out src/*.java
       - run: java -cp out SortingChecks
       - run: java -cp out BinarySearchChecks
+      - run: java -cp out LinearSearchChecks
