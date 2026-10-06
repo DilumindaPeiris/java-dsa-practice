@@ -15,3 +15,4 @@ jobs:
       - run: java -cp out SortingChecks
       - run: java -cp out BinarySearchChecks
       - run: java -cp out LinearSearchChecks
+      - run: java -cp out RecursiveBinarySearchChecks

@@ -2,7 +2,8 @@
 
 A growing collection of data structures and algorithms implemented in Java.
 The project includes three sorting algorithms checked against Java's built-in
-sort, plus linear and binary search with executable checks.
+sort, plus linear search and iterative and recursive binary search with
+executable checks.
 
 ## Implemented algorithms
 
@@ -13,13 +14,15 @@ sort, plus linear and binary search with executable checks.
 | Insertion sort | O(n) | O(n²) | O(n²) | O(1) |
 | Linear search | O(1) | O(n) | O(n) | O(1) |
 | Binary search | O(1) | O(log n) | O(log n) | O(1) |
+| Recursive binary search | O(1) | O(log n) | O(log n) | O(log n) |
 
 The sorting implementations sort an integer array in place, in ascending
 order. Linear search accepts any non-null integer array and returns the first
 matching index, or -1 if the target is absent. Binary search requires a
 non-null array already sorted in ascending order and returns a matching index,
-or -1 if the target is absent. The sorting demo clones the original array so
-each algorithm receives the same input.
+or -1 if the target is absent. Recursive binary search has the same input
+requirements and result, using O(log n) call-stack space. The sorting demo
+clones the original array so each algorithm receives the same input.
 
 ## Run locally
 
@@ -32,6 +35,7 @@ java -cp out SortingPractice
 java -cp out SortingChecks
 java -cp out LinearSearchChecks
 java -cp out BinarySearchChecks
+java -cp out RecursiveBinarySearchChecks
 ```
 
 Expected demo output:
@@ -49,7 +53,7 @@ Binary search checks cover empty and one-element arrays, boundaries, missing
 values, duplicates, negative numbers, and integer extremes. Linear search
 checks cover empty and one-element arrays, unsorted input, boundaries, missing
 values, duplicates, and integer extremes. GitHub Actions compiles and runs all
-three check suites on pushes and pull requests.
+four check suites on pushes and pull requests.
 
 ## Learning exercises
 
