@@ -13,3 +13,4 @@ jobs:
           java-version: '17'
       - run: javac -d out src/*.java
       - run: java -cp out SortingChecks
+      - run: java -cp out BinarySearchChecks
