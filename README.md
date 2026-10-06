@@ -2,8 +2,8 @@
 
 A growing collection of data structures and algorithms implemented in Java.
 The project includes three sorting algorithms checked against Java's built-in
-sort, plus merge sort, quicksort, and linear search and iterative and recursive
-binary search with executable checks.
+sort, plus merge sort, quicksort, linear and binary search, and a two-pointer
+pair-sum check, all with executable checks.
 
 ## Implemented algorithms
 
@@ -17,6 +17,7 @@ binary search with executable checks.
 | Linear search | O(1) | O(n) | O(n) | O(1) |
 | Binary search | O(1) | O(log n) | O(log n) | O(1) |
 | Recursive binary search | O(1) | O(log n) | O(log n) | O(log n) |
+| Pair sum (sorted array) | O(1) | O(n) | O(n) | O(1) |
 
 The sorting implementations sort an integer array in place, in ascending
 order. Merge sort uses additional O(n) space. Quicksort sorts in place and
@@ -27,6 +28,8 @@ non-null array already sorted in ascending order and returns a matching index,
 or -1 if the target is absent. Recursive binary search has the same input
 requirements and result, using O(log n) call-stack space. The sorting demo
 clones the original array so each algorithm receives the same input.
+Pair-sum search requires a non-null array sorted in ascending order and checks
+whether two distinct elements sum to the target.
 
 ## Run locally
 
@@ -40,6 +43,7 @@ java -cp out SortingChecks
 java -cp out LinearSearchChecks
 java -cp out BinarySearchChecks
 java -cp out RecursiveBinarySearchChecks
+java -cp out PairSumChecks
 ```
 
 Expected demo output:
@@ -59,7 +63,7 @@ Binary search checks cover empty and one-element arrays, boundaries, missing
 values, duplicates, negative numbers, and integer extremes. Linear search
 checks cover empty and one-element arrays, unsorted input, boundaries, missing
 values, duplicates, and integer extremes. GitHub Actions compiles and runs all
-four check suites on pushes and pull requests.
+five check suites on pushes and pull requests.
 
 ## Learning exercises
 

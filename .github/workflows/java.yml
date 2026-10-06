@@ -16,3 +16,4 @@ jobs:
       - run: java -cp out BinarySearchChecks
       - run: java -cp out LinearSearchChecks
       - run: java -cp out RecursiveBinarySearchChecks
+      - run: java -cp out PairSumChecks
