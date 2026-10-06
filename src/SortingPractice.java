@@ -37,6 +37,34 @@ public class SortingPractice {
         }
     }
 
+    public static void mergeSort(int[] values) {
+        mergeSort(values, 0, values.length - 1);
+    }
+
+    private static void mergeSort(int[] values, int low, int high) {
+        if (low >= high) return;
+
+        int middle = low + (high - low) / 2;
+        mergeSort(values, low, middle);
+        mergeSort(values, middle + 1, high);
+        merge(values, low, middle, high);
+    }
+
+    private static void merge(int[] values, int low, int middle, int high) {
+        int[] merged = new int[high - low + 1];
+        int left = low;
+        int right = middle + 1;
+        int destination = 0;
+
+        while (left <= middle && right <= high) {
+            if (values[left] <= values[right]) merged[destination++] = values[left++];
+            else merged[destination++] = values[right++];
+        }
+        while (left <= middle) merged[destination++] = values[left++];
+        while (right <= high) merged[destination++] = values[right++];
+        System.arraycopy(merged, 0, values, low, merged.length);
+    }
+
     private static void swap(int[] values, int first, int second) {
         int temporary = values[first];
         values[first] = values[second];
@@ -48,12 +76,15 @@ public class SortingPractice {
         int[] bubble = original.clone();
         int[] selection = original.clone();
         int[] insertion = original.clone();
+        int[] merge = original.clone();
         bubbleSort(bubble);
         selectionSort(selection);
         insertionSort(insertion);
+        mergeSort(merge);
         System.out.println("Original:  " + Arrays.toString(original));
         System.out.println("Bubble:    " + Arrays.toString(bubble));
         System.out.println("Selection: " + Arrays.toString(selection));
         System.out.println("Insertion: " + Arrays.toString(insertion));
+        System.out.println("Merge:     " + Arrays.toString(merge));
     }
 }

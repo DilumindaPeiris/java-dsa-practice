@@ -2,8 +2,8 @@
 
 A growing collection of data structures and algorithms implemented in Java.
 The project includes three sorting algorithms checked against Java's built-in
-sort, plus linear search and iterative and recursive binary search with
-executable checks.
+sort, plus merge sort and linear search and iterative and recursive binary
+search with executable checks.
 
 ## Implemented algorithms
 
@@ -12,12 +12,14 @@ executable checks.
 | Bubble sort (early exit) | O(n) | O(n²) | O(n²) | O(1) |
 | Selection sort | O(n²) | O(n²) | O(n²) | O(1) |
 | Insertion sort | O(n) | O(n²) | O(n²) | O(1) |
+| Merge sort | O(n log n) | O(n log n) | O(n log n) | O(n) |
 | Linear search | O(1) | O(n) | O(n) | O(1) |
 | Binary search | O(1) | O(log n) | O(log n) | O(1) |
 | Recursive binary search | O(1) | O(log n) | O(log n) | O(log n) |
 
 The sorting implementations sort an integer array in place, in ascending
-order. Linear search accepts any non-null integer array and returns the first
+order. Merge sort uses additional O(n) space. Linear search accepts any
+non-null integer array and returns the first
 matching index, or -1 if the target is absent. Binary search requires a
 non-null array already sorted in ascending order and returns a matching index,
 or -1 if the target is absent. Recursive binary search has the same input
@@ -30,7 +32,7 @@ Install JDK 17 or newer (a JRE alone does not include the compiler).
 Open a terminal in this project folder:
 
 ```sh
-javac -d out src/SortingPractice.java src/SortingChecks.java
+javac -d out src/*.java
 java -cp out SortingPractice
 java -cp out SortingChecks
 java -cp out LinearSearchChecks
@@ -45,6 +47,7 @@ Original:  [64, 25, 12, 22, 11]
 Bubble:    [11, 12, 22, 25, 64]
 Selection: [11, 12, 22, 25, 64]
 Insertion: [11, 12, 22, 25, 64]
+Merge:     [11, 12, 22, 25, 64]
 ```
 
 Sorting checks cover empty arrays, one element, sorted and reversed input,

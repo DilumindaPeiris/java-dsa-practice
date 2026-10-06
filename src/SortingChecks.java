@@ -31,6 +31,7 @@ public class SortingChecks {
             check(SortingPractice::bubbleSort, input);
             check(SortingPractice::selectionSort, input);
             check(SortingPractice::insertionSort, input);
+            check(SortingPractice::mergeSort, input);
         }
         System.out.println("Passed " + checks + " sorting checks.");
     }
